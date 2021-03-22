@@ -48,3 +48,19 @@ class Round:
         res += self.tour[0].distance(self.tour[len(self.tour) - 1])
 
         return res
+
+    def getTour(self):
+        """
+        Getter of Tour
+        :return: the tour list
+        :rtype: list
+        """
+        return self.tour
+
+    def getType(self):
+        """
+        Getter of Type
+        :return: the type of the round
+        :rtype: list
+        """
+        return self.type
