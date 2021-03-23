@@ -30,7 +30,7 @@ class Round:
             res += str(town.getNumber()) + ", "
         res = res[:-2]
         res += "]"
-
+        res += "\nCost : "+str(self.cost())
         return res
 
     def cost(self) -> float:
