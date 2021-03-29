@@ -32,39 +32,15 @@ class GreedyNN(Greedy):
 
         # Initialise the list of the Round and the visited list
         R1 = [startingTown]
-        self.visited.clear()  # it's might be an useless line
-        self.visited.append(startingTown)
+        self.Visited(startingTown)
         # While each town arent visited
-        while len(self.visited) < len(self.listTown):
+        while not self.AreAllVisited():
             # Search for the nearest Town
             nextTown = self.nearest_Town(startingTown)
-            self.visited.append(nextTown)
+            self.Visited(nextTown)
             R1.append(nextTown)
             startingTown = nextTown
         return Round(R1, self.getMethod())
-
-    def nearest_Town(self, startingTown) -> Town:
-        """
-        get the nearest Town from startingTown
-        :param startingTown: the Town where to begin
-        :type startingTown: Town
-
-        :return: the nearest Town
-        :rtype: Town
-        """
-        # temp list without the starting town
-        temp = list(self.listTown)
-
-        # delete all visited town
-        for town in self.visited:
-            temp.remove(town)
-
-        # Calculate all distances from startingTown
-        cost = {}
-        for town in temp:
-            cost[town] = startingTown.distance(town)
-        # return from the cost dict the min value -> Town
-        return min(cost, key=cost.get)
 
     def best_Nearest_Neighbor(self) -> Round:
         """

@@ -9,6 +9,9 @@ class Round:
 
         :param tour: the round of towns done
         :param method: the method to obtain this round
+
+        :type tour: list
+        :type method: str
         """
         self.tour = tour
         self.type = method

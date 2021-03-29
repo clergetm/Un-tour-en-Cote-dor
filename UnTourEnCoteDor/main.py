@@ -1,5 +1,6 @@
 # Press the green button in the gutter to run the script.
 from Algorithmes.GreedyAlgorithms.Greedy import Greedy
+from Algorithmes.GreedyAlgorithms.GreedyNI import GreedyNI
 from Algorithmes.GreedyAlgorithms.GreedyNN import GreedyNN
 from Geography.Department import Department
 from Rounds.AscendingRound import AscendingRound
@@ -42,7 +43,7 @@ def TP1(q):
 def TP2(q):
     if q == 1:
         turn = AscendingRound(cotedor.listTown)
-        print(turn.__str__())
+        print(turn)
         print(turn.cost())
 
     if q == 2:
@@ -52,6 +53,11 @@ def TP2(q):
         res = glouton.best_Nearest_Neighbor()
         print(res)
 
+    if q == 3:
+        r = AscendingRound(cotedor.listTown)
+        glouton = GreedyNI(r.getTour())
+        res = glouton.Nearest_Insertion()
+        print(res)
     elif q == 999:
         # Test de nearest_Town
         r = AscendingRound(cotedor.listTown)
@@ -74,7 +80,7 @@ def TP2(q):
 
 
 if __name__ == '__main__':
-    TP2(2)
+    # TP2(3)
 
 
 

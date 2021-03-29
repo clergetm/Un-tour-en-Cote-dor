@@ -44,8 +44,8 @@ class Department:
         :return: the town with this number or nothing if nothing found
         :rtype: Town
         """
-        for i in range(0, len(self.listTown)):
-            if i == self.listTown[i].getNumber():
+        for j in range(0, len(self.listTown)):
+            if j == self.listTown[i].getNumber():
                 return self.listTown[i]
 
             return
