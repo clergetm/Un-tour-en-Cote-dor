@@ -1,4 +1,7 @@
-class Algorithm:
+from abc import ABC
+
+
+class Algorithm(ABC):
     """
     Class "interface" of Algorithms
     """

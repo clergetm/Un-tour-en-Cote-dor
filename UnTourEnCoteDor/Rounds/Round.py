@@ -1,4 +1,8 @@
-class Round:
+from abc import ABC
+from Geography.Town import Town
+
+
+class Round(ABC):
     """
     Class "abstract" of Rounds
     """
@@ -33,7 +37,7 @@ class Round:
             res += str(town.getNumber()) + ", "
         res = res[:-2]
         res += "]"
-        res += "\nCost : "+str(self.cost())
+        res += "\nCost : " + str(self.cost())
         return res
 
     def cost(self) -> float:
@@ -60,6 +64,14 @@ class Round:
         """
         return self.tour
 
+    def setTour(self, newTour):
+        """
+        Setter of Tour
+        :param newTour: the new tour list
+        :type newTour: list
+        """
+        self.tour = newTour
+
     def getType(self):
         """
         Getter of Type
@@ -67,3 +79,14 @@ class Round:
         :rtype: list
         """
         return self.type
+
+    def getTown(self, i) -> Town:
+        """
+        Getter of Town
+        :param i: an iterator
+        :type i: int
+
+        :return: the Town of the round at i
+        :rtype: Town
+        """
+        return self.tour[i]

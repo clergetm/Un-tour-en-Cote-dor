@@ -28,12 +28,14 @@ class Department:
         """
         str method for all towns
 
-        Print in the console the list of all towns informations
-
+        :return: the list of all towns informations
+        :rtype: str
         .. seealso:: town.__str__()
         """
+        res = ""
         for town in self.listTown:
-            print(town.__str__())
+            res += town.__str__()+"\n"
+        return res
 
     def getTown(self, i) -> Town:
         """
